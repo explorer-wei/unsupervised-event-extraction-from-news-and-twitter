@@ -16,7 +16,7 @@ To extract events from news articles, first, the text analysis (tokenization, st
 
 In term of the event similarity model, the [Google Word2Vec tool](https://code.google.com/archive/p/word2vec/) has been used to produce a vector set for every event. The distance between two events is measured by a similarity model, which calculates the distance between the centroids of two spheres formed by the two vector sets, in a hyper dimension space.
 
-![Event Similarity Measured by Word Vectors](/Documents/news-event-extractor-output.png)
+![Event Similarity Measured by Word Vectors](/Documents/news-event-extractors-compare.png)
 
 Some components like the database, [weka clustering](https://www.cs.waikato.ac.nz/ml/weka/), and HTML parser offer fundamental functions to the system.
 
@@ -29,7 +29,7 @@ Same as the pipeline of the News Event Extractor, the Twitter Event Extractor ca
 - NER: The NER component is for the Name Entities Recognition (NER). In this part, we used [PyNER python library](https://github.com/dat/pyner) as the interface of Stanford NER service.  Our NER parsing process used 7 classes name entities. They include Time, Location, Organization, Person, Money, Percent, and Date. 
 - Event Creator: after we got the NER results and topic labels of each tweet, we can generate the event. For each event, it contains 7 keywords from LDA topics, “When” component and “Where” component. We get “When” component from “Person” and “Organization” labels of NER result and “Where” component from “Location” labels of NER result. 
 
-![News Events on a Time Line](/Documents/news-event-extractor-output.jpg)
+![News Events on a Time Line](/Documents/news-event-extractor-output.png)
 
 ## Acknowledge
 Thanks to Xuan Zhang, Ji Wang, and Tianyu Geng for working with me in "CS6604 Digital Libraries" @ Virginia Tech 2014 Spring.
